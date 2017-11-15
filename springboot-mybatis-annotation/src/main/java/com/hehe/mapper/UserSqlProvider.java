@@ -23,7 +23,7 @@ public class UserSqlProvider {
     /**
      * 方式2：也可以根据官方提供的API来编写动态SQL。
      */
-    public String getBadUser(@Param("username") String username, @Param("password") String password) {
+    public String getBadUser(@Param("username") final String username, @Param("password") final String password) {
         return new SQL() {{
             SELECT("*");
             FROM("t_user");

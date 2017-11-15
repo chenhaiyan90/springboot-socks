@@ -45,13 +45,35 @@
         <repository>
             <id>spring-snapshots</id>
             <url>http://repo.spring.io/snapshot</url>
-            <snapshots>
+            <layout>default</layout>
+            <releases>
                 <enabled>true</enabled>
-            </snapshots>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots><enabled>false</enabled></snapshots>
         </repository>
         <repository>
-            <id>spring-milestones</id>
+            <id>spring-milestone</id>
             <url>http://repo.spring.io/milestone</url>
+
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <repository>
+            <!-- Maven 自带的中央仓库使用的Id为central 如果其他的仓库声明也是用该Id
+            就会覆盖中央仓库的配置 -->
+            <id>mvnrepository</id>
+            <name>mvnrepository</name>
+            <url>http://www.mvnrepository.com/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories>
     <pluginRepositories>
@@ -74,4 +96,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
